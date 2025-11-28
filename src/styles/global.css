@@ -26,4 +26,14 @@
 
 }
 
+/* Estilos globales para el contenido de páginas */
+.content {
+  padding: 32px;
+  margin-top: 6rem;
+  width: 100%;
+  min-height: calc(100vh - 6rem);
+  box-sizing: border-box;
+  background-color: var(--background-grey);
+}
+
 /*# sourceMappingURL=global.css.map */
