@@ -23,3 +23,18 @@
     border-left: 4px solid #D65136 !important;
     border: 1px solid rgba(0, 0, 0, 0.12);
 }
+
+.insights p:first-of-type {
+    font-size: 13px;
+    color: var(--text-grey);
+}
+
+#buttonHiSparkles1,
+#buttonHiSparkles2 {
+    background-color: #FAFAFA;
+    font-size:12px;
+    text-transform: none;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: var(--text-black);
+    font-weight:bold;
+}

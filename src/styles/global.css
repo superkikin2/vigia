@@ -9,6 +9,8 @@
   --text-red: #A36464;
   --text-yellow: #C29C6E;
   --text-green: #5C963F;
+  --text-purple: #551F82;
+
   /*--primary-blue: #1976d2;
   --text-blue: #1976d2;*/
   --text-white: #ffffff;
@@ -20,6 +22,7 @@
   --background-red: #D6A5A5;
   --background-yellow: #F2E7C4;
   --background-green: #EDFCE6;
+  --background-purple: #D9CAE3
 
 }
 
