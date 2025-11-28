@@ -1,6 +1,7 @@
 import { Box, Grid, Typography, Card, Chip, Divider } from '@mui/material';
 import Cards from '../components/Cards';
 import LineDiagram from '../components/charts/LineDiagram';
+import HeatmapDiagram from '../components/charts/HeatmapDiagram';
 
 import '../styles/pages/GestionRiesgos.css';
 
@@ -205,7 +206,18 @@ export default function GestionRiesgos() {
                 <Typography variant="h5">
                   Matriz de calor de Riesgos
                 </Typography>
-                
+                <HeatmapDiagram 
+                  data={[
+                    { row: 0, col: 0, value: 4 },
+                    { row: 0, col: 2, value: 3 },
+                    { row: 1, col: 1, value: 2 },
+                    { row: 1, col: 2, value: 2 },
+                    { row: 2, col: 2, value: 2 },
+                    { row: 2, col: 3, value: 1 },
+                  ]}
+                  rowLabels={['Baja', 'Media', 'Alta']}
+                  colLabels={['Menor', 'Moderado', 'Mayor', 'Crítico']}
+                />
               </Card>
             </Grid>
 
