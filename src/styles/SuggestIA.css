@@ -10,3 +10,13 @@
     flex: 1;
     min-width: 0;
 }
+
+@media (max-width: 900px) {
+    .suggest-card-list {
+        flex-direction: column;
+    }
+    
+    .suggest-card-document {
+        width: 100%;
+    }
+}

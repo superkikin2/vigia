@@ -5,7 +5,7 @@ import Selector from './Selector';
 import '../styles/LateralMenu.css';
 
 export default function LateralMenu({ mobileOpen, collapsed, isMobile, handleDrawerToggle, handleCollapseToggle, menuItems, location, drawerWidth, collapsedWidth }) {
-
+console.log(menuItems)
   const drawer = (
     <div className="drawer">
       <Toolbar className={`drawer-toolbar d-flex align-items-center m-2 

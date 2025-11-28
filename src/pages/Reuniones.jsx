@@ -3,6 +3,10 @@ import { Box, Grid, Typography, Card, TextField, Divider } from '@mui/material';
 import Cards from '../components/Cards'
 import ChipsGroup from '../components/ChipsGroup';
 import { reunionesMock } from '../mocks';
+import { HiSparkles } from "react-icons/hi";
+import { GrStatusGood } from "react-icons/gr";
+import { HiOutlineDocumentText } from "react-icons/hi2";
+import { HiUsers } from "react-icons/hi";
 import '../styles/pages/Reuniones.css'
 
 export default function Reuniones() {
@@ -103,13 +107,14 @@ export default function Reuniones() {
           <Card variant="outlined" className="subcard mt-3">
             <Card variant="outlined">
               <Typography variant="body2" gutterBottom>
+                <HiSparkles />&nbsp;
                 Acta automática e insights de la IA disponibles para esta reunion.
               </Typography>
             </Card>
             <Grid container spacing={4} className="subgrid mt-3">
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
                 <Typography variant="body1" gutterBottom>
-                    Insights IA
+                    <HiSparkles style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Insights IA
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     · Riesgo R-012(Suministro Acero) vuelve a ser critico.
@@ -123,7 +128,7 @@ export default function Reuniones() {
               </Grid>
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
                 <Typography variant="body1" gutterBottom>
-                    Acciones Derivadas
+                    <GrStatusGood style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Acciones Derivadas
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     · 8 acciones totales creadas.
@@ -134,7 +139,7 @@ export default function Reuniones() {
               </Grid>
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
                 <Typography variant="body1" gutterBottom>
-                    Participantes
+                    <HiUsers style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Participantes
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     Ana Gracía, Pedro, Sofía
@@ -142,7 +147,7 @@ export default function Reuniones() {
               </Grid>
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
                 <Typography variant="body1" gutterBottom>
-                    Highlights IA
+                    <HiOutlineDocumentText style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Highlights IA (Resumen)
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     · Escalar incidencia de proveedor a Comité de Dirección.

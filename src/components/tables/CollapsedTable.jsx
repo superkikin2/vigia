@@ -271,16 +271,16 @@ export default function CollapsedTable({ rows = defaultRows }) {
         <TableHead>
           <TableRow>
             <TableCell sx={{ width: 50 }} />
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               <TableSortLabel>Actividad</TableSortLabel>
             </TableCell>
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               <TableSortLabel>CV</TableSortLabel>
             </TableCell>
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               <TableSortLabel>SV</TableSortLabel>
             </TableCell>
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               Estado
             </TableCell>
           </TableRow>
