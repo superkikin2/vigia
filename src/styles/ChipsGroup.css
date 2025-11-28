@@ -24,3 +24,25 @@
     color: var(--text-blue) !important;
     border: 1px solid var(--text-blue) !important;
 }
+
+.list-items-4 {
+    justify-content: flex-start;
+    display: flex;
+    font-weight: 700;
+    background-color: var(--background-orange) !important;
+    color: var(--text-red) !important;
+    border: 1px solid var(--background-orange) !important;
+    border-radius:7px;
+    text-transform:uppercase;
+}
+
+.list-items-5 {
+    justify-content: flex-start;
+    display: flex;
+    font-weight: 700;
+    background-color: var(--background-grey) !important;
+    color: var(--text-grey) !important;
+    border: none;
+    border-radius:7px;
+    text-transform:uppercase;
+}
