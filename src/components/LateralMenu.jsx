@@ -120,7 +120,6 @@ export default function LateralMenu({ mobileOpen, collapsed, isMobile, handleDra
         className="main-content"
         sx={{ ml: 0 }}
       >
-        <Toolbar />
         <Outlet />
       </Box>
     </Box>
