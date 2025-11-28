@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Card } from '@mui/material';
+import { Box, Grid, Typography, Card, Chip, Button } from '@mui/material';
 import ChipsGroup from '../components/ChipsGroup';
 import '../styles/pages/Alertas.css';
 
@@ -29,10 +29,10 @@ export default function Alertas() {
           }} 
         className="mt-5"
       >
-        <Typography variant="h6" gutterbottom fontWeight="bold">
+        <Typography variant="h6" gutterbottom fontWeight="bold" sx={{textAlign:'left'}}>
           Monitor de alertas
         </Typography>
-        <Typography variant="body2" gutterbottom>
+        <Typography variant="body2" gutterbottom sx={{textAlign:'left'}}>
           Listado priorizado de notificaciones y eventos del proyecto.
         </Typography>
       </Box>
@@ -98,10 +98,10 @@ export default function Alertas() {
           }} 
         className="mt-4"
       >
-        <Typography variant="h6" gutterbottom fontWeight="bold">
+        <Typography variant="h6" gutterbottom fontWeight="bold" sx={{textAlign:'left'}}>
           Insights del Proyecto
         </Typography>
-        <Typography variant="body2" gutterbottom>
+        <Typography variant="body2" gutterbottom sx={{textAlign:'left'}}>
           Resomendaciones estratégicas generadas por IA.
         </Typography>
       </Box>
@@ -114,7 +114,40 @@ export default function Alertas() {
         className="mt-4"
       >
         <Card variant="outlined" className="card p-3">
-          
+          <Grid container spacing={2} className="">
+            <Grid size={{ xs: 12, md: 4, lg: 4 }} >
+              <Chip 
+                label="Rendimiento"
+                variant="outlined"
+                sx={{ 
+                    backgroundColor: "var(--primary-blue-hover)",
+                    color: "var(--text-blue)",              
+                    borderColor: "var(--primary-blue-hover)",
+                    fontWeight: 'bold', 
+                }}
+              />
+              <Typography variant="h6" gutterbottom>
+                Mejora progresiva del CPI en estructuras
+              </Typography>
+            </Grid>
+            <Grid size={{ xs: 12, md: 4, lg: 4 }} >
+              <Typography variant="body2" gutterbottom>
+                Se ha detectado una tendencia positiva en el índice de Rendimiento de Coste (CPI) en el paquete de trabajo
+                de Estructuras durante las últimas 3 semanaas. Las correcciones en el proceso de soldadura están dando resultado.
+              </Typography>
+              <Chip 
+                label="Rendimiento"
+                variant="outlined"
+                sx={{ 
+                    backgroundColor: "var(--primary-blue-hover)",
+                    color: "var(--text-blue)",              
+                    borderColor: "var(--primary-blue-hover)",
+                    fontWeight: 'bold', 
+                }}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 4, lg: 4 }} ></Grid>
+          </Grid>
         </Card>
       </Box>
 
