@@ -1,0 +1,26 @@
+.list-items-1 {
+    justify-content: flex-start;
+    display: flex;
+    font-weight: 700;
+    background-color: var(--background-grey) !important;
+    color: var(--text-grey) !important;
+    border: none;
+}
+
+.list-items-2 {
+    justify-content: flex-start;
+    display: flex;
+    font-weight: 700;
+    background-color: transparent !important;
+    color: var(--text-grey) !important;
+    border: 1px solid var(--text-grey) !important;
+}
+
+.list-items-3 {
+    justify-content: flex-start;
+    display: flex;
+    font-weight: 700;
+    background-color: var(--primary-blue-hover) !important;
+    color: var(--text-blue) !important;
+    border: 1px solid var(--text-blue) !important;
+}

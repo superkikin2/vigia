@@ -1,0 +1,5 @@
+.card form {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}

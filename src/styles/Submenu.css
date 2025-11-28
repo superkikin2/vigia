@@ -1,0 +1,16 @@
+.avatar {
+    background-color: var(--primary-blue-hover) !important;
+}
+
+.avatar > p {
+    color: var(--text-blue);
+    font-weight:bold;
+}
+.box-avatar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: white;
+    border-radius: 4px;
+    padding: 12px;
+}

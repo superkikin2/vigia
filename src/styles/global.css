@@ -1,0 +1,26 @@
+:root {
+  --primary-blue: #00326B;
+  --primary-blue-hover: #DCF1FA;
+  --primary-blue-hover-2: #1976d2;
+
+  --text-blue: #2C5994;
+  --text-grey: #828282;
+  --text-orange: #FF6B00;
+  --text-red: #A36464;
+  --text-yellow: #C29C6E;
+  --text-green: #5C963F;
+  /*--primary-blue: #1976d2;
+  --text-blue: #1976d2;*/
+  --text-white: #ffffff;
+  --text-black: #000000;
+
+  --background-grey: #F5F7FA;
+  --background-orange: #FFD5B8;
+  --background-blue: #2C5994;
+  --background-red: #D6A5A5;
+  --background-yellow: #F2E7C4;
+  --background-green: #EDFCE6;
+
+}
+
+/*# sourceMappingURL=global.css.map */

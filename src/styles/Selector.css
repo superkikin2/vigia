@@ -1,0 +1,35 @@
+.selector {
+    border:none;
+    border-color: var(--text-white);
+    border-bottom: 1px solid var(--text-white);
+}
+
+.selector-native {
+  color: var(--text-white) !important;
+}
+
+
+/* Línea inferior normal */
+.selector-native:before {
+  border-bottom: 1px solid var(--text-white) !important;
+}
+
+/* Línea inferior en foco */
+.selector-native:after {
+  border-bottom: 2px solid var(--text-white) !important;
+}
+
+/* Icono (flecha) */
+.selector-native svg {
+  color: var(--text-white) ;
+}
+
+.selector-native select{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.selector-native option {
+  color: black ;
+}

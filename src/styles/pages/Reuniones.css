@@ -1,0 +1,44 @@
+.card .grid {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.card .grid > div:nth-child(2){
+    text-align: right;
+}
+
+.card h6 {
+    font-size:1rem;
+    font-weight: bold;
+}
+
+.subcard {
+    padding:14px;
+    background-color: #FAFAFA !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius:0px !important;
+}
+
+.subcard > div:first-child {
+    padding:10px;
+    background-color: var(--background-green);
+    border: 1px solid var(--text-green);
+}
+
+.subcard > div:first-child p {
+    color: var(--text-green);
+    font-weight: bold !important;
+}
+
+.subcard .subgrid > div {
+    background-color: #F5F5F5;
+    padding:15px;
+    border-radius:10px;
+}
+
+.subcard .subgrid > div p:first-child {
+    font-weight:bold;
+}
