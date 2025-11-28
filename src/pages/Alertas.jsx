@@ -1,24 +1,21 @@
+import { useState, useEffect } from 'react';
 import { Box, Grid, Typography, Card, Chip, Button } from '@mui/material';
 import ChipsGroup from '../components/ChipsGroup';
 import { HiSparkles } from "react-icons/hi";
+import { alertasMock } from '../mocks';
 import '../styles/pages/Alertas.css';
 
 export default function Alertas() {
+  const [chipItems1, setChipItems1] = useState([]);
+  const [chipItems2, setChipItems2] = useState([]);
+  const [chipItems3, setChipItems3] = useState([]);
 
-  const chipItems1 = [
-    { text: 'Alta', class:"list-items-4  mb-2" },
-    { text: 'Riesgos', class:"list-items-5 mx-2 mb-2" },
-  ];
-
-  const chipItems2 = [
-    { text: 'Alta', class:"list-items-4 mb-2" },
-    { text: 'Valor Ganado', class:"list-items-5 mx-2 mb-2" },
-  ];
-
-  const chipItems3 = [
-    { text: 'Media', class:"list-items-4 mb-2" },
-    { text: 'Planificación', class:"list-items-5 mx-2 mb-2" },
-  ];
+  useEffect(() => {
+    // Aquí irán las llamadas al API y la carga de datos en los componentes
+    setChipItems1(alertasMock.chipItems1);
+    setChipItems2(alertasMock.chipItems2);
+    setChipItems3(alertasMock.chipItems3);
+  }, []);
 
   
   return (

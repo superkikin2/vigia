@@ -1,9 +1,12 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+
 import { Box, Typography, Grid } from '@mui/material';
 import { Paper } from '@mui/material';
 import { SvgIcon } from '@mui/material';
 
 import DocSearch from '../components/forms/DocSearch';
+import { documentacionMock } from '../mocks/documentacionMock';
 import File from './File';
 
 const AbstractIcon = ({ color }) => (
@@ -31,6 +34,14 @@ const filesData = [
 ];
 
 export default function FileExplorer() {
+    const [searchPlaceholder, setSearchPlaceholder] = useState('');
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        // Aquí irán las llamadas al API y la carga de datos en los componentes
+        setSearchPlaceholder(documentacionMock.searchPlaceholder);
+        setCategories(documentacionMock.categories);
+    }, []);
     return (
 
         <Box sx={{ p: 4, }}>
@@ -54,8 +65,8 @@ export default function FileExplorer() {
             >
                 <DocSearch
                     className="doc-search-bar"
-                    placeholder="Buscar archivos..."
-                    categories={['Todos', 'Planos', 'Especificaciones', 'Actas', 'Informes', 'Presentaciones']}
+                    placeholder={searchPlaceholder}
+                    categories={categories}
                     onSearch={(value) => console.log('Buscando:', value)}
                     onCategoryChange={(category) => console.log('Categoría:', category)}
                     onViewChange={(view) => console.log('Vista:', view)}
