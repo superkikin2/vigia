@@ -14,7 +14,7 @@ const getLabelColor = (label) => {
   return { color: '#666', bg: '#f5f5f5' };
 };
 
-export default function Cards({ id, title, percentage, text, label, sx, origin }) {
+export default function Cards({ title, percentage, text, label, sx, origin }) {
 
   const labelColors = getLabelColor(label);
 
