@@ -5,6 +5,7 @@ import ChipsGroup from '../components/ChipsGroup';
 import BasicTable from '../components/tables/BasicTable';
 import AssistantIA from '../components/AssistantIA';
 import '../styles/pages/Planificacion.css';
+import PlannerDiagram from '../components/charts/PlannerDiagram';
 
 export default function Planificacion() {
 
@@ -103,7 +104,13 @@ export default function Planificacion() {
           <Typography variant="h5" gutterBottom>
             Estado de las actividades
           </Typography>
-          <ChipsGroup menuItems={ menuItems } />
+          <PlannerDiagram 
+            tasks={[
+              { id: 1, name: 'Tarea 1', start: 1, end: 3 },
+              { id: 2, name: 'Tarea 2', start: 2, end: 5 },
+            ]}
+            columns={['S1', 'S2', 'S3', 'S4', 'S5']}
+          />
         </Card>
       </Box>
     </Box>
