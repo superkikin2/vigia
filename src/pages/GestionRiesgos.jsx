@@ -2,7 +2,6 @@ import { Box, Grid, Typography, Card, Chip, Divider } from '@mui/material';
 import Cards from '../components/Cards';
 import LineDiagram from '../components/charts/LineDiagram';
 import HeatmapDiagram from '../components/charts/HeatmapDiagram';
-
 import '../styles/pages/GestionRiesgos.css';
 
 const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
