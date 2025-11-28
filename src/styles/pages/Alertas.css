@@ -1,6 +1,11 @@
-
-
 .card p:first-child {
     color: var(--text-black);
     font-weight: bold;
+}
+
+#card-alerta-1, #card-alerta-2, #card-alerta-3 {
+    box-shadow:none;
+    border-radius:10px;
+    border-left: 3px solid #D65136 !important;
+    border: 1px solid rgba(0, 0, 0, 0.12);
 }
