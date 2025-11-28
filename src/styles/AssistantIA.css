@@ -1,13 +1,91 @@
-.ia-content-1 {
-    padding: 25px;        
-    max-width: 600px;
-    margin-left: auto;    
-    margin-right: auto;   
+.ia-panel {
+    position: fixed;
+    top: 64px;
+    right: 0;
+    width: 600px;
+    max-width: 90vw;
+    height: calc(100vh - 64px);
     background-color: #F5F0ED;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 1200;
+    overflow-y: auto;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.ia-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.ia-options {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.ia-option-button {
+    min-width: auto;
+    padding: 8px;
     border-radius: 4px;
+    color: var(--text-black);
+}
+
+.ia-header-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-black);
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.ia-panel-closing {
+    animation: slideOutRight 0.3s ease-out forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 600px) {
+    .ia-panel {
+        width: 100vw;
+        max-width: 100vw;
+    }
+}
+
+.ia-content-1 {
+    padding: 20px 25px;
+    background-color: #FAFAFA;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .ia-content-1 p { 
@@ -19,28 +97,25 @@
 }
 
 .ia-content-2 {
-    padding: 32px;        
-    max-width: 600px;
-    margin-left: auto;    
-    margin-right: auto;   
+    padding: 32px 25px;
     background-color: var(--text-white);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
+    min-height: calc(100vh - 128px);
 }
 
 .ia-content-2 h4 {
     font-weight: bold; 
     text-align: center;
     margin:32px;
+    color: black;
 }
 
 .ia-content-2 .paper {
-    padding: 16px;          
-    display: flex;
+    padding: 16px;
     align-items: center;
     height: 120px;
     border-radius: 10px;    
-    margin-bottom: 24px;    
+    margin-bottom: 24px;
+    flex-direction: row;
 }
 
 .plus-icon {

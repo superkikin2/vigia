@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Card, TextField} from '@mui/material';
+import { Box, Grid, Typography, Card, TextField, Divider } from '@mui/material';
 import Cards from '../components/Cards'
 import ChipsGroup from '../components/ChipsGroup';
 import '../styles/pages/Reuniones.css'
@@ -148,9 +148,7 @@ export default function Reuniones() {
                     Ana Gracía, Pedro, Sofía
                 </Typography>
               </Grid>
-            </Grid>
-            <Grid container spacing={4} className="subgrid mt-3">
-              <Grid item size={{ xs: 12, md: 12, lg: 12 }}>
+              <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
                 <Typography variant="body1" gutterBottom>
                     Highlights IA
                 </Typography>

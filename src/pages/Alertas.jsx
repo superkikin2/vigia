@@ -1,7 +1,3 @@
-import { Box, Grid, Typography, Card, TextField} from '@mui/material';
-import ChipsGroup from '../components/ChipsGroup';
-import '../styles/pages/Alertas.css';
-
 export default function Alertas() {
 
   const chipItems = [
@@ -92,5 +88,6 @@ export default function Alertas() {
         </Card>
       </Box>
     </Box>
+
   );
 }
