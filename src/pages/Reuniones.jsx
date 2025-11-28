@@ -1,29 +1,21 @@
+import { useState, useEffect } from 'react';
 import { Box, Grid, Typography, Card, TextField, Divider } from '@mui/material';
 import Cards from '../components/Cards'
 import ChipsGroup from '../components/ChipsGroup';
+import { reunionesMock } from '../mocks';
 import '../styles/pages/Reuniones.css'
 
 export default function Reuniones() {
+  const [cardItems, setCardItems] = useState([]);
+  const [chipItems, setChipItems] = useState([]);
+  const [chipItems2, setChipItems2] = useState([]);
 
-  const cardItems = [
-    { id: 1, title: 'Total de reuniones del proyecto (30d)', percentage: '42', text: '', label: '' },
-    { id: 2, title: 'Participas', percentage: '35', text: '', label: ''  },
-    { id: 3, title: 'Asistidas', percentage: '27', text: '', label: ''  },
-    { id: 4, title: 'Duración media', percentage: '38 min', text: '', label: ''  }
-  ];
-
-  const chipItems = [
-    { text: 'Hoy', class:"list-items-2 mx-2" },
-    { text: 'Últimos 7 días', class:"list-items-2 mx-2" },
-    { text: 'Últimos 30 días', class:"list-items-2 mx-2" },
-    { text: 'No asistidas', class:"list-items-2 mx-2" },
-  ];
-
-  const chipItems2 = [
-    { text: 'Prioritaria', class:"list-items-3 mr-2" },
-    { text: 'PMO', class:"list-items-3 m-2" },
-    { text: 'F110', class:"list-items-3 m-2 " },
-  ];
+  useEffect(() => {
+    // Aquí irán las llamadas al API y la carga de datos en los componentes
+    setCardItems(reunionesMock.cardItems);
+    setChipItems(reunionesMock.chipItems);
+    setChipItems2(reunionesMock.chipItems2);
+  }, []);
 
   return (
     <Box className="content">
