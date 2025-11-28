@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Box, Grid, Typography, Card } from '@mui/material';
 import Cards from '../components/Cards'
 import BarDiagram from '../components/charts/BarDiagram';
@@ -8,6 +9,7 @@ import '../styles/pages/Planificacion.css';
 import PlannerDiagram from '../components/charts/PlannerDiagram';
 
 export default function Planificacion() {
+  const [activeFilter, setActiveFilter] = useState(null);
 
   const cardItems = [
     { id: 1, title: 'Actividades en camino crítico', percentage: '32', text: '', label: '+5.2% vs. sem.ant' },
@@ -17,11 +19,45 @@ export default function Planificacion() {
   ];
 
   const menuItems = [
-    { text: 'En riesgo', class:"list-items-2 mx-2" },
-    { text: 'Retrasado > 7d', class:"list-items-2 mx-2" },
-    { text: 'Sin Avance', class:"list-items-2 mx-2" },
-    { text: 'Camino Crítico', class:"list-items-2 mx-2" },
+    { text: 'En riesgo', class: activeFilter === 'En riesgo' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
+    { text: 'Retrasado > 7d', class: activeFilter === 'Retrasado > 7d' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
+    { text: 'Sin Avance', class: activeFilter === 'Sin Avance' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
+    { text: 'Camino Crítico', class: activeFilter === 'Camino Crítico' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
   ];
+
+  const tableRows = [
+    { 
+      actividad: 'Integración de sonares', 
+      subtitulo: 'Producción', 
+      planificados: '90d', 
+      consumidos: '95d', 
+      retraso: '+5d', 
+      completado: '98%',
+      estado: 'En riesgo'
+    },
+    { 
+      actividad: 'Integración de sonares', 
+      subtitulo: 'Producción', 
+      planificados: '120d', 
+      consumidos: '135d', 
+      retraso: '+5d', 
+      completado: '98%',
+      estado: 'Retrasado > 7d'
+    },
+    { 
+      actividad: 'Integración de sonares', 
+      subtitulo: 'Producción', 
+      planificados: '30d', 
+      consumidos: '28d', 
+      retraso: '-2d', 
+      completado: '98%',
+      estado: 'Camino Crítico'
+    }
+  ];
+
+  const handleFilterClick = (filterText) => {
+    setActiveFilter(activeFilter === filterText ? null : filterText);
+  };
 
 
   return (
@@ -80,14 +116,11 @@ export default function Planificacion() {
           <Typography variant="h5" gutterBottom>
             Estado de las actividades
           </Typography>
-          <ChipsGroup menuItems={ menuItems } />
+          <ChipsGroup menuItems={ menuItems } onItemClick={handleFilterClick} />
           <BasicTable
-            headTable={["Actividad", "Planificados", "Consumidos", "Retraso", "%Completado"]}
-            contentTable={[
-              ["Integración de sonares", "90d", "95d", "+5d", "98%"],
-              ["Integración de sonares", "120d", "135d", "+5d", "98%"],
-              ["Integración de sonares", "30d", "28d", "-2d", "98%"]
-            ]}
+            headTable={["Actividad", "Planificados", "Consumidos", "Retraso", "% Completado"]}
+            rows={tableRows}
+            filter={activeFilter}
           />
         </Card>
       </Box>

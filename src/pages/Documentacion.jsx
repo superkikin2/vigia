@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import SuggestIA from '../components/SuggestIA';
 import FileExplorer from '../components/FileExplorer';
 import '../styles/Documentacion.css';
@@ -5,9 +6,9 @@ import '../styles/Documentacion.css';
 
 export default function Documentacion() {
   return (
-    <div>
+    <Box className="content" style={{ marginTop: '12rem' }}>
       <SuggestIA />
       <FileExplorer />
-    </div>
+    </Box>
   );
 }

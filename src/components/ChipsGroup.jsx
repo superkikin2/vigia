@@ -3,10 +3,14 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import '../styles/ChipsGroup.css';
 
-//const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
-
-export default function ChipsGroup({menuItems = []}) {
+export default function ChipsGroup({ menuItems = [], onItemClick }) {
  
+  const handleClick = (text) => {
+    if (onItemClick) {
+      onItemClick(text);
+    }
+  };
+
   return (
     <Box className="text-start">
       {menuItems.map((item, index) => (
@@ -14,6 +18,8 @@ export default function ChipsGroup({menuItems = []}) {
           key={index}
           label={item.text}
           className={item.class}
+          onClick={() => handleClick(item.text)}
+          sx={{ cursor: onItemClick ? 'pointer' : 'default' }}
         />
       ))}
     </Box>
