@@ -2,6 +2,7 @@ import Cards from '../components/Cards'
 import InlineForm from '../components/forms/InlineForm.jsx';
 import { Box, Grid, Typography, Card } from '@mui/material';
 import BasicTable from '../components/tables/BasicTable';
+import BubbleChart from '../components/charts/BubbleChart.jsx';
 //import '../styles/pages/ValorGanado.css';
 
 export default function ValorGanado() {
@@ -55,6 +56,14 @@ export default function ValorGanado() {
               <Typography variant="h5" gutterBottom>
                 Estado del proyecto por categoria
               </Typography>
+              <BubbleChart 
+                data={[
+                  { id: 1, x: 1.2, y: 1.3, size: 200, label: 'Proyecto A' },
+                  { id: 2, x: 0.8, y: 0.9, size: 150, label: 'Proyecto B' },
+                ]}
+                width={700}
+                height={500}
+              />
             </Card>
           </Grid>
           <Grid size={{ xs: 12, md: 6, lg: 6 }}>
