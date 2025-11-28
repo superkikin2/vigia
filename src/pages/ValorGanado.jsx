@@ -1,7 +1,7 @@
 import Cards from '../components/Cards'
 import InlineForm from '../components/forms/InlineForm.jsx';
 import { Box, Grid, Typography, Card } from '@mui/material';
-import BasicTable from '../components/tables/BasicTable';
+import CategoriesTable from '../components/tables/CategoriesTable.jsx';
 import BubbleChart from '../components/charts/BubbleChart.jsx';
 //import '../styles/pages/ValorGanado.css';
 import DetailTable from '../components/tables/DetailTable.jsx';
@@ -38,6 +38,16 @@ export default function ValorGanado() {
     CV: { bad: -50000, good: 50000 },
     SV: { bad: -50000, good: 50000 },
   };
+
+  const categoriesData = [
+    { categoria: 'Categoría 1', cpi: 1.10, spi: 1.05, cv: '200 mil €', sv: '10d' },
+    { categoria: 'Categoría 2', cpi: 0.90, spi: 0.95, cv: '-150 mil €', sv: '-8d' },
+    { categoria: 'Categoría 4', cpi: 0.90, spi: 1.05, cv: '-12 mil €', sv: '3d' },
+    { categoria: 'Categoría 5', cpi: 0.90, spi: 1.05, cv: '-12 mil €', sv: '3d' },
+    { categoria: 'Categoría 6', cpi: 0.90, spi: 1.05, cv: '-12 mil €', sv: '3d' },
+    { categoria: 'Categoría 7', cpi: 0.90, spi: 1.05, cv: '-12 mil €', sv: '3d' },
+    { categoria: 'Categoría 8', cpi: 0.90, spi: 1.05, cv: '-12 mil €', sv: '3d' },
+  ];
 
   return (
     <Box className="content">
@@ -81,20 +91,7 @@ export default function ValorGanado() {
             </Card>
           </Grid>
           <Grid size={{ xs: 12, md: 6, lg: 6 }}>
-              <BasicTable
-                headTable={["Categoría", "CPI", "SPI", "CV", "SV"]}
-                contentTable={[
-                  ["Categoría 1", 1.10, 1.05, "100 mil €", "10d"],
-                  ["Categoría 2", 0.90, 0.95, "-150 mil €", "-8d"],
-                  ["Categoría 3", 0.90, 1.05, "-12 mil €", "3d"],
-                  ["Categoría 4", 0.90, 1.05, "-12 mil €", "3d"],
-                  ["Categoría 5", 0.90, 1.05, "-12 mil €", "3d"],
-                  ["Categoría 6", 0.90, 1.05, "-12 mil €", "3d"],
-                  ["Categoría 7", 0.90, 1.05, "-12 mil €", "3d"],
-                  ["Categoría 8", 0.90, 1.05, "-12 mil €", "3d"],
-                ]}
-              />
-            
+              <CategoriesTable rows={categoriesData} />
           </Grid>
         </Grid>
       </Box>
