@@ -1,58 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Grid, Typography, Card } from '@mui/material';
 import Cards from '../components/Cards'
 import BarDiagram from '../components/charts/BarDiagram';
 import ChipsGroup from '../components/ChipsGroup';
 import BasicTable from '../components/tables/BasicTable';
 import AssistantIA from '../components/AssistantIA';
+import { planificacionMock } from '../mocks';
 import '../styles/pages/Planificacion.css';
 import PlannerDiagram from '../components/charts/PlannerDiagram';
 
 export default function Planificacion() {
   const [activeFilter, setActiveFilter] = useState(null);
+  const [cardItems, setCardItems] = useState([]);
+  const [tableRows, setTableRows] = useState([]);
+  const [plannerTasks, setPlannerTasks] = useState([]);
+  const [plannerColumns, setPlannerColumns] = useState([]);
 
-  const cardItems = [
-    { id: 1, title: 'Actividades en camino crítico', percentage: '32', text: '', label: '+5.2% vs. sem.ant' },
-    { id: 2, title: 'CC sin variación en el avance', percentage: '18', text: '3.0M € / 8.5M €', label: '+5.2% vs. sem.ant'  },
-    { id: 3, title: 'CC sin variación en el avance', percentage: '4', text: '', label: '+5.2% vs. sem.ant'  },
-    { id: 4, title: 'CC sin avance no finalizados', percentage: '9', text: '', label: '+5.2% vs. sem.ant'  }
-  ];
+  useEffect(() => {
+    // Aquí irán las llamadas al API y la carga de datos en los componentes
+    setCardItems(planificacionMock.cardItems);
+    setTableRows(planificacionMock.tableRows);
+    setPlannerTasks(planificacionMock.plannerTasks);
+    setPlannerColumns(planificacionMock.plannerColumns);
+  }, []);
 
   const menuItems = [
     { text: 'En riesgo', class: activeFilter === 'En riesgo' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
     { text: 'Retrasado > 7d', class: activeFilter === 'Retrasado > 7d' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
     { text: 'Sin Avance', class: activeFilter === 'Sin Avance' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
     { text: 'Camino Crítico', class: activeFilter === 'Camino Crítico' ? "list-items-2-active mx-2" : "list-items-2 mx-2" },
-  ];
-
-  const tableRows = [
-    { 
-      actividad: 'Integración de sonares', 
-      subtitulo: 'Producción', 
-      planificados: '90d', 
-      consumidos: '95d', 
-      retraso: '+5d', 
-      completado: '98%',
-      estado: 'En riesgo'
-    },
-    { 
-      actividad: 'Integración de sonares', 
-      subtitulo: 'Producción', 
-      planificados: '120d', 
-      consumidos: '135d', 
-      retraso: '+5d', 
-      completado: '98%',
-      estado: 'Retrasado > 7d'
-    },
-    { 
-      actividad: 'Integración de sonares', 
-      subtitulo: 'Producción', 
-      planificados: '30d', 
-      consumidos: '28d', 
-      retraso: '-2d', 
-      completado: '98%',
-      estado: 'Camino Crítico'
-    }
   ];
 
   const handleFilterClick = (filterText) => {
@@ -138,11 +114,8 @@ export default function Planificacion() {
             Estado de las actividades
           </Typography>
           <PlannerDiagram 
-            tasks={[
-              { id: 1, name: 'Tarea 1', start: 1, end: 3 },
-              { id: 2, name: 'Tarea 2', start: 2, end: 5 },
-            ]}
-            columns={['S1', 'S2', 'S3', 'S4', 'S5']}
+            tasks={plannerTasks}
+            columns={plannerColumns}
           />
         </Card>
       </Box>

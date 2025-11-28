@@ -1,24 +1,22 @@
+import { useState, useEffect } from 'react';
 import { Container, Box, Grid, Typography, Card, Button } from '@mui/material';
 import Cards from '../components/Cards'
 import CollapsedTable from '../components/tables/CollapsedTable';
 import ChipsGroup from '../components/ChipsGroup';
 import VerticalTimeline from '../components/VerticalTimeline';
 import AssistantIA from '../components/AssistantIA';
+import { visionGeneralMock } from '../mocks';
 import '../styles/pages/VisionGeneral.css';
 
 export default function VisionGeneral() {
+  const [cardItems, setCardItems] = useState([]);
+  const [menuItems, setMenuItems] = useState([]);
 
-  const cardItems = [
-    { id: 1, title: 'Avance del proyecto', percentage: '60%', text: '', label: '+2.5 pp vs sem. ant.' },
-    { id: 2, title: 'Consumo del Presupuesto', percentage: '35%', text: '3.0M € / 8.5M €', label: '-1.2 pp vs sem. ant.'  },
-    { id: 3, title: 'Riesgos críticos activos', percentage: '7', text: '', label: '+0 vs sem. ant.'  },
-    { id: 4, title: 'Proyección al cierre', percentage: 'EAC 9.2M €', text: 'ETC 6,2M €', label: '+0.1M vs sem. ant.'  }
-  ];
-
-  const menuItems = [
-    { text: '7 en total', class:"list-items-1 mx-2" },
-    { text: '3 participantes', class:"list-items-1 mx-2" },
-  ];
+  useEffect(() => {
+    // Aquí irán las llamadas al API y la carga de datos en los componentes
+    setCardItems(visionGeneralMock.cardItems);
+    setMenuItems(visionGeneralMock.menuItems);
+  }, []);
 
   return (
 
