@@ -12,6 +12,31 @@
     font-weight: bold;
 }
 
+.specialGrid {}
+
+.specialGrid button:nth-child(1),
+.specialGrid button:nth-child(2) {
+    font-size:12px;
+    font-weight:bold;
+    color: var(--text-black);
+    text-transform:none;
+    background-color: var(--background-grey);
+    border:none;
+    border-radius:10px;
+    height: 40px;
+}
+
+.specialGrid button:nth-child(3) {
+    font-size:12px;
+    font-weight:bold;
+    color: var(--text-white);
+    text-transform:none;
+    background-color: var(--primary-blue-hover-2);
+    border:none;
+    border-radius:10px;
+    height: 40px;
+}
+
 .subcard {
     padding:14px;
     background-color: #FAFAFA !important;

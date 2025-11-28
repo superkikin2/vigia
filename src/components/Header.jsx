@@ -7,6 +7,7 @@ import PageHeader from './PageHeader';
 import '../styles/Header.css';
 
 export default function Header({ isMobile, collapsed, drawerWidth, collapsedWidth, handleDrawerToggle, menuItems, location, assistantOpen, handleAssistantToggle }) {
+    console.log(menuItems[0])
     return (
         <AppBar
             position="fixed"

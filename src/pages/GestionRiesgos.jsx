@@ -149,7 +149,7 @@ export default function GestionRiesgos() {
           className="mt-5" 
         >
           <Card variant="outlined" className="card">
-            <Typography variant="body1" gutterBottom fontWeight="bold">
+            <Typography variant="h6" gutterBottom fontWeight="bold">
               Registro Detallado de Riesgos
             </Typography>
           <DetailRiskTable 

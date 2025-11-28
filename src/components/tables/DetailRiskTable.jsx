@@ -206,16 +206,16 @@ export default function DetailRiskTable({ rows, onNavigate }) {
         <TableHead>
           <TableRow>
             <TableCell sx={{ width: 50 }} />
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               ID / Nombre del Riesgo
             </TableCell>
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               Puntuación Actual
             </TableCell>
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               Estrategia de Mitigación
             </TableCell>
-            <TableCell sx={{ fontWeight: 600, color: '#1976d2' }}>
+            <TableCell sx={{ fontWeight: 700, color: 'var(--text-grey)' }}>
               Puntuación Objetivo
             </TableCell>
             <TableCell sx={{ width: 50 }} />
