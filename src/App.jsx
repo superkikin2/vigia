@@ -11,6 +11,7 @@ import NormativaIA from './pages/NormativaIA';
 import Chats from './pages/Chats';
 import Documentacion from './pages/Documentacion'
 import './styles/global.css';
+import Layout from './components/Layout';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-        <Route element={<LateralMenu />}>
+        <Route element={<Layout/>}>
           <Route path="/" element={<VisionGeneral />} />
           <Route path="/alertas" element={<Alertas />} />
           <Route path="/planificacion" element={<Planificacion />} />
