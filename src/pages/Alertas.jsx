@@ -1,19 +1,41 @@
+import { Box, Grid, Typography, Card } from '@mui/material';
+import ChipsGroup from '../components/ChipsGroup';
+import '../styles/pages/Alertas.css';
+
 export default function Alertas() {
 
-  const chipItems = [
-    { text: 'Alta', class:"list-items-2 mx-2" },
-    { text: 'Riesgos', class:"list-items-3 mx-2" },
+  const chipItems1 = [
+    { text: 'Alta', class:"list-items-4  mb-2" },
+    { text: 'Riesgos', class:"list-items-5 mx-2 mb-2" },
+  ];
+
+  const chipItems2 = [
+    { text: 'Alta', class:"list-items-4 mb-2" },
+    { text: 'Valor Ganado', class:"list-items-5 mx-2 mb-2" },
+  ];
+
+  const chipItems3 = [
+    { text: 'Media', class:"list-items-4 mb-2" },
+    { text: 'Planificación', class:"list-items-5 mx-2 mb-2" },
   ];
 
   
   return (
     <Box className="content">
-      <Typography variant="h6" gutterbottom fontWeight="bold">
-        Monitor de alertas
-      </Typography>
-      <Typography variant="body2" gutterbottom>
-        Listado priorizado de notificaciones y eventos del proyecto.
-      </Typography>
+      <Box
+        sx={{ 
+            flexGrow: 1, 
+            width: { xs: "100%", md: "100%", lg: '100%' } 
+          }} 
+        className="mt-5"
+      >
+        <Typography variant="h6" gutterbottom fontWeight="bold">
+          Monitor de alertas
+        </Typography>
+        <Typography variant="body2" gutterbottom>
+          Listado priorizado de notificaciones y eventos del proyecto.
+        </Typography>
+      </Box>
 
       <Box
         sx={{ 
@@ -22,7 +44,8 @@ export default function Alertas() {
           }} 
         className="mt-4"
       >
-        <Card variant="outlined" className="card p-3" id="card-alerta-1">
+        <Card variant="outlined" className="p-3" id="card-alerta-1">
+          <ChipsGroup menuItems={chipItems1}/>
           <Typography variant="body1" gutterbottom>
             Nuevo riesgo R-034
           </Typography>
@@ -39,7 +62,8 @@ export default function Alertas() {
           }} 
         className="mt-4"
       >
-        <Card variant="outlined" className="card p-3" id="card-alerta-2">
+        <Card variant="outlined" className="p-3" id="card-alerta-2">
+          <ChipsGroup menuItems={chipItems2}/>
           <Typography variant="body1" gutterbottom>
             SPI 0,86 en WBS 1.2
           </Typography>
@@ -56,7 +80,8 @@ export default function Alertas() {
           }} 
         className="mt-4"
       >
-        <Card variant="outlined" className="card p-3" id="card-alerta-3">
+        <Card variant="outlined" className="p-3" id="card-alerta-3">
+          <ChipsGroup menuItems={chipItems3}/>
           <Typography variant="body1" gutterbottom>
             Hito M3 retrasado 3d
           </Typography>
@@ -79,10 +104,27 @@ export default function Alertas() {
         <Typography variant="body2" gutterbottom>
           Resomendaciones estratégicas generadas por IA.
         </Typography>
+      </Box>
 
+      <Box
+        sx={{ 
+            flexGrow: 1, 
+            width: { xs: "100%", md: "100%", lg: '100%' } 
+          }} 
+        className="mt-4"
+      >
         <Card variant="outlined" className="card p-3">
           
         </Card>
+      </Box>
+
+      <Box
+        sx={{ 
+            flexGrow: 1, 
+            width: { xs: "100%", md: "100%", lg: '100%' } 
+          }} 
+        className="mt-4"
+      >
         <Card variant="outlined" className="card p-3">
           
         </Card>
