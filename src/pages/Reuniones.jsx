@@ -1,18 +1,25 @@
 import { useState, useEffect } from 'react';
-import { Box, Grid, Typography, Card, TextField, Button } from '@mui/material';
+
+import { Box, Grid, Typography, Card } from '@mui/material';
+import Button from '@mui/material/Button';
+import { HiUsers } from "react-icons/hi";
+
 import Cards from '../components/Cards'
 import ChipsGroup from '../components/ChipsGroup';
+
 import { reunionesMock } from '../mocks';
 import { HiSparkles } from "react-icons/hi";
 import { GrStatusGood } from "react-icons/gr";
 import { HiOutlineDocumentText } from "react-icons/hi2";
-import { HiUsers } from "react-icons/hi";
 import '../styles/pages/Reuniones.css'
+import Search from '../components/forms/Search';
 
 export default function Reuniones() {
   const [cardItems, setCardItems] = useState([]);
   const [chipItems, setChipItems] = useState([]);
   const [chipItems2, setChipItems2] = useState([]);
+  const [openDetail1, setOpenDetail1] = useState(false);
+  const [openDetail2, setOpenDetail2] = useState(false);
 
   useEffect(() => {
     // Aquí irán las llamadas al API y la carga de datos en los componentes
@@ -58,7 +65,7 @@ export default function Reuniones() {
               <ChipsGroup menuItems={chipItems}/>
             </Grid>
             <Grid size={{ xs: 12, md: 6, lg: 5 }}>
-              <TextField id="outlined-basic" label="Buscar proyecto, PEP..." variant="outlined" align="center"/>
+              <Search placeholder='Buscar Proyecto, PEP...'/>
             </Grid>
           </Grid>
         </Card>
@@ -191,6 +198,7 @@ export default function Reuniones() {
               </Grid>
             </Grid>
           </Card>
+          
         </Card>
 
       </Box>

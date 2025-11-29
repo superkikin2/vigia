@@ -1,18 +1,10 @@
-import { SvgIcon } from '@mui/material';
 import { HiSparkles } from "react-icons/hi";
 
 import { Box, Stack, Typography } from '@mui/material';
-import DescriptionIcon from '@mui/icons-material/Description';
 
 import SuggestCard from '../components/SuggestCard';
 import '../styles/SuggestIA.css';
-
-const RedAbstractIcon = (props) => (
-  <SvgIcon {...props} viewBox="0 0 24 24">
-    <path d="M5,5 C5,5 15,5 15,10 C15,15 10,12 10,18 L8,16 M10,18 L12,16" 
-          fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </SvgIcon>
-);
+import DocumentIcon from '../assets/Document.svg?react';
 
 export default function SuggestIA() {
     return (
@@ -47,14 +39,14 @@ export default function SuggestIA() {
             
                 <div className="suggest-card-document">
                 <SuggestCard 
-                    icon={<RedAbstractIcon fontSize="inherit" />} 
+                    icon={<DocumentIcon style={{ width: 40, height: 40, color: '#ff5252' }} />} 
                 />
                 </div>
 
                 <div className="suggest-card-document">
                 <SuggestCard 
                     title="Contrato de Servicios.pdf"
-                    icon={<DescriptionIcon fontSize="inherit" />} 
+                    icon={<DocumentIcon style={{ width: 40, height: 40, color: '#ff5252' }} />} 
                     reason="Documento legal pendiente de firma."
                 />
                 </div>
@@ -62,7 +54,7 @@ export default function SuggestIA() {
                 <div className="suggest-card-document">
                 <SuggestCard 
                     title="Contrato de Servicios.pdf"
-                    icon={<DescriptionIcon fontSize="inherit" />} 
+                    icon={<DocumentIcon style={{ width: 40, height: 40, color: '#ff5252' }} />} 
                     reason="Documento legal pendiente de firma."
                 />
                 </div>
