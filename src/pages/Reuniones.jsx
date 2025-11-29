@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
+
 import { Box, Grid, Typography, Card } from '@mui/material';
-import { GrDocumentText } from "react-icons/gr";
-import { IoSparklesOutline } from "react-icons/io5";
-import { FaRegCheckCircle } from "react-icons/fa";
 import Button from '@mui/material/Button';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { HiUsers } from "react-icons/hi";
 
 import Cards from '../components/Cards'
 import ChipsGroup from '../components/ChipsGroup';
 
 import { reunionesMock } from '../mocks';
+import { HiSparkles } from "react-icons/hi";
+import { GrStatusGood } from "react-icons/gr";
+import { HiOutlineDocumentText } from "react-icons/hi2";
 import '../styles/pages/Reuniones.css'
 import Search from '../components/forms/Search';
 
@@ -88,67 +88,22 @@ export default function Reuniones() {
           <Typography variant="body2" gutterBottom>
             Revisión de avances del sprint, identificación de bloqueos en el WP 2.3 y planificación de las próximas tareas de integración.
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2, mb: 2 }}>
-            <ChipsGroup menuItems={chipItems2}/>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <Button
-                variant="contained"
-                disableElevation
-                sx={{
-                  backgroundColor: '#f8f9fc',
-                  color: '#2c3e50',
-                  textTransform: 'none',
-                  fontWeight: 800,
-                  borderRadius: 3,
-                  padding: '8px 20px',
-                  '&:hover': {
-                    backgroundColor: '#eef2f6'
-                  }
-                }}
-              >
-                Ver acta
-              </Button>
-                
-              
-              <Button
-                variant="contained"
-                disableElevation
-                sx={{
-                  backgroundColor: '#f8f9fc',
-                  color: '#2c3e50',
-                  textTransform: 'none',
-                  fontWeight: 800,
-                  borderRadius: 3,
-                  padding: '8px 20px',
-                  '&:hover': {
-                    backgroundColor: '#eef2f6'
-                  }
-                }}
-              >
-                Ver grabación
-              </Button>
-
-              <Button
-                variant="contained"
-                disableElevation
-                endIcon={openDetail1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                onClick={() => setOpenDetail1(!openDetail1)}
-                sx={{
-                  backgroundColor: '#005bb5',
-                  color: '#ffffff',
-                  textTransform: 'none',
-                  fontWeight: 800,
-                  borderRadius: 3,
-                  padding: '8px 20px',
-                  '&:hover': {
-                    backgroundColor: '#004494'
-                  }
-                }}
-              >
-                Ver detalle
-              </Button>
-            </Box>
-          </Box>
+          <Grid container spacing={2} className="specialGrid">
+            <Grid size={{ xs: 12, md: 6, lg: 6 }}>
+              <ChipsGroup menuItems={chipItems2}/>
+            </Grid>
+            <Grid size={{ xs: 12, md: 6, lg: 6 }} 
+              sx={{ 
+                display: 'flex', 
+                justifyContent: 'flex-end',
+                gap: 1 
+              }}
+            >
+              <Button variant="outlined">Ver acta</Button>
+              <Button variant="outlined">Ver grabación</Button>
+              <Button variant="outlined">Ver detalle</Button>
+            </Grid>
+          </Grid>
         </Card>
       </Box>
 
@@ -169,81 +124,34 @@ export default function Reuniones() {
           <Typography variant="body2" gutterBottom>
             Revisión de avances del sprint, identificación de bloqueos en el WP 2.3 y planificación de las próximas tareas de integración.
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2, mb: 2 }}>
-            <ChipsGroup menuItems={chipItems2}/>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              <Button
-                variant="contained"
-                disableElevation
-                sx={{
-                  backgroundColor: '#f8f9fc',
-                  color: '#2c3e50',
-                  textTransform: 'none',
-                  fontWeight: 800,
-                  borderRadius: 3,
-                  padding: '8px 20px',
-                  '&:hover': {
-                    backgroundColor: '#eef2f6'
-                  }
-                }}
-              >
-                Ver acta
-              </Button>
-                
-              
-              <Button
-                variant="contained"
-                disableElevation
-                sx={{
-                  backgroundColor: '#f8f9fc',
-                  color: '#2c3e50',
-                  textTransform: 'none',
-                  fontWeight: 800,
-                  borderRadius: 3,
-                  padding: '8px 20px',
-                  '&:hover': {
-                    backgroundColor: '#eef2f6'
-                  }
-                }}
-              >
-                Ver grabación
-              </Button>
-
-              <Button
-                variant="contained"
-                disableElevation
-                endIcon={openDetail2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                onClick={() => setOpenDetail2(!openDetail2)}
-                sx={{
-                  backgroundColor: '#005bb5',
-                  color: '#ffffff',
-                  textTransform: 'none',
-                  fontWeight: 800,
-                  borderRadius: 3,
-                  padding: '8px 20px',
-                  '&:hover': {
-                    backgroundColor: '#004494'
-                  }
-                }}
-              >
-                Ver detalle
-              </Button>
-            </Box>
-          </Box>
+          <Grid container spacing={2} className="specialGrid">
+            <Grid size={{ xs: 12, md: 12, lg: 6 }}>
+              <ChipsGroup menuItems={chipItems2}/>
+            </Grid>
+            <Grid size={{ xs: 12, md: 12, lg: 6 }} 
+              sx={{ 
+                display: 'flex', 
+                justifyContent: 'flex-end',
+                gap: 1 
+              }}
+            >
+              <Button variant="outlined">Ver acta</Button>
+              <Button variant="outlined">Ver grabación</Button>
+              <Button variant="outlined">Ver detalle</Button>
+            </Grid>
+          </Grid>
           
-          {openDetail2 && (
           <Card variant="outlined" className="subcard mt-3">
             <Card variant="outlined">
-              <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1, p: 1 }}>
-                <IoSparklesOutline style={{ color: 'var(--text-green)', fontWeight: 'bold' }}/>
+              <Typography variant="body2" gutterBottom>
+                <HiSparkles />&nbsp;
                 Acta automática e insights de la IA disponibles para esta reunion.
               </Typography>
             </Card>
             <Grid container spacing={4} className="subgrid mt-3">
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
-                <Typography variant="body1" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <IoSparklesOutline style={{ color: '#2C5994'}}/>
-                    Insights IA
+                <Typography variant="body1" gutterBottom>
+                    <HiSparkles style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Insights IA
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     · Riesgo R-012(Suministro Acero) vuelve a ser critico.
@@ -256,9 +164,8 @@ export default function Reuniones() {
                 </Typography>
               </Grid>
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
-                <Typography variant="body1" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <FaRegCheckCircle style={{ color: 'var(--background-blue)'}}/>
-                    Acciones Derivadas
+                <Typography variant="body1" gutterBottom>
+                    <GrStatusGood style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Acciones Derivadas
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     · 8 acciones totales creadas.
@@ -269,16 +176,15 @@ export default function Reuniones() {
               </Grid>
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
                 <Typography variant="body1" gutterBottom>
-                    Participantes
+                    <HiUsers style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Participantes
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     Ana Gracía, Pedro, Sofía
                 </Typography>
               </Grid>
               <Grid item size={{ xs: 12, md: 6, lg: 4 }}>
-                <Typography variant="body1" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <GrDocumentText style={{ color: '#2C5994'}}/>
-                    Highlights IA
+                <Typography variant="body1" gutterBottom>
+                    <HiOutlineDocumentText style={{ color: "var(--primary-blue-hover-2)" }} />&nbsp;Highlights IA (Resumen)
                 </Typography>
                 <Typography variant="body2" gutterBottom sx={{color: 'var(--text-grey)'}}>
                     · Escalar incidencia de proveedor a Comité de Dirección.
@@ -292,7 +198,7 @@ export default function Reuniones() {
               </Grid>
             </Grid>
           </Card>
-          )}
+          
         </Card>
 
       </Box>

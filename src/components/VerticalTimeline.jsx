@@ -1,5 +1,6 @@
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot} from '@mui/lab';
 import {Card, Typography, Chip} from '@mui/material';
+import { HiSparkles } from "react-icons/hi";
 
 export default function BasicTimeline() {
 
@@ -13,9 +14,12 @@ export default function BasicTimeline() {
         },
       }}
     >
+      <Typography variant="body2" gutterBottom fontWeight="bold">
+        Hoy
+      </Typography>
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ backgroundColor: "var(--primary-blue)" }}/>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
@@ -27,7 +31,12 @@ export default function BasicTimeline() {
               Seguimiento semanal F110
             </Typography>
             <Chip 
-              label="Resumen de la reunión disponible"
+              label={
+                <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                  <HiSparkles />
+                  Resumen de la reunión disponible
+                </span>
+              }
               variant="outlined"
               sx={{ 
                   backgroundColor: "var(--primary-blue-hover)",
@@ -55,7 +64,7 @@ export default function BasicTimeline() {
 
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ backgroundColor: "var(--primary-blue)" }}/>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent>
@@ -95,7 +104,7 @@ export default function BasicTimeline() {
 
       <TimelineItem>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot sx={{ backgroundColor: "var(--primary-blue)" }}/>
         </TimelineSeparator>
         <TimelineContent>
           <Typography variant="caption" gutterBottom fontWeight="bold">

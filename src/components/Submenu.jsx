@@ -4,6 +4,7 @@ import { BsBell } from "react-icons/bs";
 import '../styles/Submenu.css';
 
 export default function Submenu() {
+    
     return (
         <Box className="box-avatar">
             <BsBell  color="var(--primary-blue)" />
