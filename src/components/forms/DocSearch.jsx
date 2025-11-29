@@ -1,9 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Box, TextField, InputAdornment, IconButton, ToggleButton, ToggleButtonGroup } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+import { Box, IconButton, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import GridViewIcon from '@mui/icons-material/GridView';
 import SwapVertIcon from '@mui/icons-material/SwapVert';
+import Search from './Search';
 
 export default function DocSearch({
   placeholder = 'Buscar documentos...',
@@ -32,31 +32,9 @@ export default function DocSearch({
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
       {/* Barra de búsqueda con iconos */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <TextField
-          fullWidth
+        <Search 
           placeholder={placeholder}
-          value={searchValue}
           onChange={handleSearchChange}
-          variant="outlined"
-          sx={{
-            '& .MuiOutlinedInput-root': {
-              borderRadius: 2,
-              backgroundColor: '#fff',
-              '& fieldset': {
-                borderColor: '#e0e0e0',
-              },
-              '&:hover fieldset': {
-                borderColor: '#bdbdbd',
-              },
-            },
-          }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon sx={{ color: '#999' }} />
-              </InputAdornment>
-            ),
-          }}
         />
         
         <IconButton
